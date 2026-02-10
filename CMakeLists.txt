@@ -17,7 +17,6 @@ set(INCLUDES
     ${DIALUP_INSTALL_DIR}/include/v1
     ${DIALUP_INSTALL_DIR}/include/external
     ${DIALUP_INSTALL_DIR}/sdk-plugin/include
-    ${DIALUP_INSTALL_DIR}/plugin/Toaster/include
 )
 
 include("${DIALUP_INSTALL_DIR}/build-tools/Plugin.cmake")
@@ -38,9 +37,6 @@ install(FILES
 
 find_package(DialUp REQUIRED PATHS ${DIALUP_INSTALL_DIR})
 target_link_libraries(${PROJECT_NAME} PRIVATE DialUp::DialUp)
-
-find_package(Toaster REQUIRED PATHS ${DIALUP_INSTALL_DIR}/plugin/Toaster)
-target_link_libraries(${PROJECT_NAME} PRIVATE Toaster::Toaster)
 
 target_include_directories(${PROJECT_NAME}
     PRIVATE
